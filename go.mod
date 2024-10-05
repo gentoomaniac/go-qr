@@ -1,6 +1,6 @@
-module github.com/gentoomaniac/go-template
+module github.com/gentoomaniac/go-qr
 
-go 1.22
+go 1.23
 
 require (
 	github.com/alecthomas/kong v1.2.1

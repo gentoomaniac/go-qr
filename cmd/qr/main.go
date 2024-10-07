@@ -24,6 +24,7 @@ var cli struct {
 
 	Data        string `help:"Data to be encoded" required:""`
 	CodeVersion int    `help:"QR code version" default:"1"`
+	Mode        uint8  `help:"QR code mode: Numeric(1), Alphanumeric(2), Binary(4), Kanjii(8)" default:"2"`
 
 	Version gocli.VersionFlag `short:"V" help:"Display version."`
 }
@@ -38,7 +39,7 @@ func main() {
 	})
 	logging.Setup(&cli.LoggingConfig)
 
-	err, qrCode := qr.New(cli.CodeVersion, cli.Data)
+	err, qrCode := qr.New(cli.CodeVersion, []byte(cli.Data), uint8(cli.Mode))
 	if err != nil {
 		log.Error().Err(err).Msg("")
 	}

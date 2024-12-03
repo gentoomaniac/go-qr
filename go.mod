@@ -3,7 +3,7 @@ module github.com/gentoomaniac/go-qr
 go 1.23
 
 require (
-	github.com/alecthomas/kong v1.2.1
+	github.com/alecthomas/kong v1.5.1
 	github.com/rs/zerolog v1.33.0
 )
 
